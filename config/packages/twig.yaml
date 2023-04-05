@@ -1,5 +1,9 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
+    globals:
+        app_name: 'TEST APP SYMFONY 05-04-2023'
+        ga_tracking: '%ga_tracking%'
+        uuid: '@App\Generator\UuidGenerator'
 
 when@test:
     twig:

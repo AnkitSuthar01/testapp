@@ -29,7 +29,32 @@
 
     <img src="{{ asset('search.png') }}" alt="Symfony!" style="width:20px;" />
 
+    <h1>Hello {{ users.user_first_name }}!</h1>
+    <p>You have {{ notifications|length }} new notifications.</p>
 
+
+    
+    {{ include('test/_user_profile.html.twig') }}
+
+    
+    <ul>
+    {% for article in articles %}
+        {% if article.id != 2 %}
+        <li>
+            <a href="{{ article.url }}" title="{{ article.slug }}">
+                {{ article.title }}
+            </a>
+        </li>
+        {% endif %}
+    {% endfor %}
+
+    </ul>
+
+
+
+
+
+    
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

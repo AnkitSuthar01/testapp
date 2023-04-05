@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to PRODUCT TEST PAGE!</title>
+    </head>
+    <body>
+
+        TEST
+
+        {{ dump(app.session.flashBag.all()) }}
+        
+        {% if app.session.flashBag('success') %}
+            <div class="alert alert-success">
+                {% for message in app.session.flashBag('success') %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% for message in app.session.flashBag('success') %}
+                    {{ message }}
+                {% endfor %}
+
+    </body>
+</html>

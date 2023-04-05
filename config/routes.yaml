@@ -18,3 +18,16 @@ ajax_route:
     methods: [POST]
     options:
         expose: true
+
+
+blog_index:
+    path:       /blog/all
+    controller: App\Controller\TestController::blogExample
+
+blog_post:
+    path:       /blog/{slug}
+    controller: App\Controller\TestController::showBlog
+
+hello:
+    path: /hello/{name}
+    controller: App\Controller\TestController::hello

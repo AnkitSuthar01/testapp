@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to Symfony!</title>
+    </head>
+    <body>
+        <h1>{{ page_title }}</h1>
+
+        <h1>Hello {{ user_first_name }}!</h1>
+        <p>You have {{ notifications|length }} new notifications.</p>
+
+        {# global Variables #}
+        <p>This came from global variable in TWIG.yaml: {{ app_name }}</p>
+
+        {# Using Service Container Parameters #}
+        {# This "ga_tracking" has been define in the service first then addedin twig config and finally view here #}        
+        <p>The google tracking code is: {{ ga_tracking }}</p>
+
+
+        {# Referencing Services #}
+
+        <p>UUID: {{ uuid.generate }}</p>
+
+        {{ include('test/_user_detail.html.twig') }}
+
+        {# HIDDEN COMMENT #}
+    </body>
+</html>
