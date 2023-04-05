@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TestController!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+
+    <div class="example-wrapper">
+        <h1>Hello {{ controller_name }}! ✅</h1>
+
+        This friendly message is coming from:
+        <ul>
+            <li>Your controller at <code><a href="{{ '/var/www/html/testapp/src/Controller/TestController.php'|file_link(0) }}">src/Controller/TestController.php</a></code></li>
+            <li>Your template at <code><a href="{{ '/var/www/html/testapp/templates/test/index.html.twig'|file_link(0) }}">templates/test/index.html.twig</a></code></li>
+            <li>
+                 <button id="my-button">AJAX REQUEST EXAMPLE</button>
+            </li>
+        </ul>
+
+
+    {% for user in users %}
+        <p>{{ user }}</p>
+    {% endfor %}
+
+
+    <img src="{{ asset('search.png') }}" alt="Symfony!" style="width:20px;" />
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+            $(document).ready(function() {
+                $('#my-button').click(function() {
+                    console.log('test');
+                    $.ajax({
+                        url: '{{ path('ajax_route') }}',
+                        type: 'POST',
+                        data: { param1: 'value1', param2: 'value2' },
+                        success: function(data) {
+                            console.log('success');
+                        },
+                        error: function() {
+                            alert('An error occurred!');
+                        }
+                    });
+                });
+            });
+    </script>
+
+{% endblock %}
+
+
+
+
