@@ -12,8 +12,9 @@ class SomeService
     }
 
     public function someMethod()
-    {        
-        $htmlContents = $this->twig->render('test/blog_home.html.twig', [
+    {
+        
+        $htmlContents = $this->twig->render('test/index.html.twig', [
             'category' => 'Sample Category',
             'promotions' => ['promotions - 1', 'promotions - 2'],
         ]);
